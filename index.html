@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIVA Constellation Meet</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="eyebrow">AIVA • AI Virtual Assistant</p>
+          <h1>Constellation Room</h1>
+        </div>
+        <div class="meeting-meta">
+          <span class="pill">Live Interview Mode</span>
+          <span id="meetingClock" aria-live="polite">00:00</span>
+        </div>
+      </header>
+
+      <section class="stage-layout">
+        <article class="video-stage" aria-label="Video grid">
+          <div class="stage-glow"></div>
+          <section class="speaker-spotlight">
+            <video id="localVideo" autoplay playsinline muted></video>
+            <div class="spotlight-overlay">
+              <p class="participant-name">You • Host</p>
+              <p id="statusLabel">Mic on · Camera on</p>
+            </div>
+          </section>
+
+          <section class="orbit-grid" id="participantOrbit">
+            <article class="orbit-card active">
+              <h2>Candidate</h2>
+              <p>Preparing response…</p>
+            </article>
+            <article class="orbit-card">
+              <h2>Interviewer</h2>
+              <p>Awaiting stream…</p>
+            </article>
+            <article class="orbit-card">
+              <h2>Observer</h2>
+              <p>Muted listener</p>
+            </article>
+          </section>
+        </article>
+
+        <aside class="assistant-rail" aria-label="AIVA assistant panel">
+          <section class="assistant-card">
+            <h2>AIVA Copilot</h2>
+            <p id="assistantHint">Real-time suggestions appear here when the conversation starts.</p>
+            <button id="simulateInsight" class="ghost-btn" type="button">Generate AI insight</button>
+          </section>
+
+          <section class="assistant-card notes">
+            <h2>Meeting Notebook</h2>
+            <textarea id="notes" placeholder="Capture interview highlights, tasks, and follow-ups..."></textarea>
+          </section>
+        </aside>
+      </section>
+
+      <footer class="control-dock" aria-label="Meeting controls">
+        <button class="control-btn" id="toggleMic" type="button">🎙️ Mic</button>
+        <button class="control-btn" id="toggleCam" type="button">📷 Camera</button>
+        <button class="control-btn" id="shareScreen" type="button">🖥️ Share</button>
+        <button class="control-btn" id="raiseHand" type="button">✋ Raise Hand</button>
+        <button class="control-btn accent" id="endCall" type="button">⏹ End Session</button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
